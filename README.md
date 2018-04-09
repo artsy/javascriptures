@@ -17,6 +17,7 @@ Instructions:
   * `cd demo-app`
 - Open `demo-app` in your editor of choice
 - Download [artists.json](https://github.com/artsy/javascriptures/blob/master/1_intro-to-react/web/src/artists.json)
+- Download [App.css](https://github.com/artsy/javascriptures/blob/master/1_intro-to-react/web/src/App.css)
 
 Resources:
 
