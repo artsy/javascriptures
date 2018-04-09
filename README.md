@@ -3,10 +3,26 @@
 ## Day 1 - React -  Let there be Props
 
 Speaker: Luc & Orta
-Topics: 
+
+Topics:
   - Intro to React
   - React vs MVC
   - Intro to React Native
+
+Instructions:
+
+- Run the following commands:
+  * `npm install -g create-react-app`
+  * `create-react-app demo-app`
+  * `cd demo-app`
+- Open `demo-app` in your editor of choice
+- Download [artists.json](https://github.com/artsy/javascriptures/blob/master/1_intro-to-react/web/src/artists.json)
+
+Resources:
+
+- [Official React docs](https://reactjs.org/)
+- [Thinking in React](https://facebook.github.io/react/docs/thinking-in-react.html)
+- [React Tutorial](https://facebook.github.io/react/docs/tutorial.html)
 
 ## Day 2 - TypeScript - And let it divide the interface from the code
      
