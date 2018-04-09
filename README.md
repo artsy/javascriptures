@@ -12,6 +12,7 @@ Topics:
 Instructions:
 
 - Run the following commands:
+  * `brew install node`
   * `npm install -g create-react-app`
   * `create-react-app demo-app`
   * `cd demo-app`
