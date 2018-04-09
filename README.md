@@ -66,22 +66,6 @@ Topics:
   - How how do we use Webpack in a simple app?
   - How do we use Webpack in a complex app?
 
-
-
-
-Maybe punted into one-off Lunch and Learns
-https://github.com/artsy/meta/projects/1#card-7717556
-
-## Day 4 - Jest / Storybooks - It was tested, and it was good
-
-Speaker: Jon
-Topics: 
-  - Comparing Jest to the competition
-  - Showing how to test common issues
-  - Looking at how Storybooks works
-  - Giving some examples of Relay + Storybooks
-
-
 You can find the code for all our sessions in this repo.
 
 ## Setup Instructions
