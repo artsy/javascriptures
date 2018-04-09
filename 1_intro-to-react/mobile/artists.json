@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Pablo Picasso",
+    "href": "/artist/pablo-picasso",
+    "image": {
+      "url": "https://d32dm0rphc51dk.cloudfront.net/i3rCA3IaKE-cLBnc-U5swQ/tall.jpg"
+    },
+    "id": "pablo-picasso",
+    "bio": "Spanish, 1881-1973"
+  },
+  {
+    "name": "Andy Warhol",
+    "href": "/artist/andy-warhol",
+    "image": {
+      "url": "https://d32dm0rphc51dk.cloudfront.net/E-k-uLoQADM8AjadsSKHrA/tall.jpg"
+    },
+    "id": "andy-warhol",
+    "bio": "American, 1928-1987"
+  },
+  {
+    "name": "Banksy",
+    "href": "/artist/banksy",
+    "image": {
+      "url": "https://d32dm0rphc51dk.cloudfront.net/X9vVvod7QY73ZwLDSZzljw/tall.jpg"
+    },
+    "id": "banksy",
+    "bio": "British"
+  },
+  {
+    "name": "Jean-Michel Basquiat",
+    "href": "/artist/jean-michel-basquiat",
+    "image": {
+      "url": "https://d32dm0rphc51dk.cloudfront.net/ITroKwWUgrsFlax-zrHhBQ/tall.jpg"
+    },
+    "id": "jean-michel-basquiat",
+    "bio": "American, 1960-1988"
+  },
+  {
+    "name": "Roy Lichtenstein",
+    "href": "/artist/roy-lichtenstein",
+    "image": {
+      "url": "https://d32dm0rphc51dk.cloudfront.net/or9oKva9F7V4VjrUKKx2iA/tall.jpg"
+    },
+    "id": "roy-lichtenstein",
+    "bio": "American, 1923-1997"
+  },
+  {
+    "name": "Francis Bacon",
+    "href": "/artist/francis-bacon",
+    "image": {
+      "url": "https://d32dm0rphc51dk.cloudfront.net/GHbExnSD5l4ocOq6JiLWdw/tall.jpg"
+    },
+    "id": "francis-bacon",
+    "bio": "British, 1909-1992"
+  },
+  {
+    "name": "Keith Haring",
+    "href": "/artist/keith-haring",
+    "image": {
+      "url": "https://d32dm0rphc51dk.cloudfront.net/EzZTt_ErG3qsVAwMh7JM2g/tall.jpg"
+    },
+    "id": "keith-haring",
+    "bio": "American, 1958-1990"
+  },
+  {
+    "name": "Damien Hirst",
+    "href": "/artist/damien-hirst",
+    "image": {
+      "url": "https://d32dm0rphc51dk.cloudfront.net/yPG7tEfXSkgtzBaA1QbPQg/tall.jpg"
+    },
+    "id": "damien-hirst",
+    "bio": "British, born 1965"
+  },
+  {
+    "name": "Ai Weiwei",
+    "href": "/artist/ai-weiwei",
+    "image": {
+      "url": "https://d32dm0rphc51dk.cloudfront.net/6-yJkIA0QyGHE8nUteBECw/tall.jpg"
+    },
+    "id": "ai-weiwei",
+    "bio": "Chinese, born 1957"
+  },
+  {
+    "name": "Jeff Koons",
+    "href": "/artist/jeff-koons",
+    "image": {
+      "url": "https://d32dm0rphc51dk.cloudfront.net/J98XhW9fvRVV-IDdAFY_ig/tall.jpg"
+    },
+    "id": "jeff-koons",
+    "bio": "American, born 1955"
+  }
+]
