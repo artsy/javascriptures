@@ -23,8 +23,8 @@ let fn: (x: string) => number = x => x.length
  * TypeScript specific
  */
 
-let exactString: "foo" = "foo"
-let exactStrings: "foo" | "bar" = "bar"
+let concreteString: "foo" = "foo"
+let concreteStrings: "foo" | "bar" = "bar"
 
 let tuple: [string, number] = ["hello", 10]
 
