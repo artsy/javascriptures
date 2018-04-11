@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash ec4e05581425e75ced9187c87255de1c
+ * @relayHash c99b304601b3a04704101ece2286366a
  */
 
 /* eslint-disable */
@@ -9,13 +9,11 @@
 
 /*::
 import type { ConcreteRequest } from 'relay-runtime';
-import type { ArtistItem_artist$ref } from './ArtistItem_artist.graphql';
+import type { PopularArtists_popular_artists$ref } from './PopularArtists_popular_artists.graphql';
 export type AppQueryVariables = {| |};
 export type AppQueryResponse = {|
   +popular_artists: ?{|
-    +artists: ?$ReadOnlyArray<?{|
-      +$fragmentRefs: ArtistItem_artist$ref,
-    |}>,
+    +$fragmentRefs: PopularArtists_popular_artists$ref,
   |},
 |};
 */
@@ -24,10 +22,14 @@ export type AppQueryResponse = {|
 /*
 query AppQuery {
   popular_artists {
-    artists {
-      ...ArtistItem_artist
-      __id
-    }
+    ...PopularArtists_popular_artists
+  }
+}
+
+fragment PopularArtists_popular_artists on PopularArtists {
+  artists {
+    ...ArtistItem_artist
+    __id
   }
 }
 
@@ -42,20 +44,12 @@ fragment ArtistItem_artist on Artist {
 }
 */
 
-const node/*: ConcreteRequest*/ = (function(){
-var v0 = {
-  "kind": "ScalarField",
-  "alias": null,
-  "name": "__id",
-  "args": null,
-  "storageKey": null
-};
-return {
+const node/*: ConcreteRequest*/ = {
   "kind": "Request",
   "operationKind": "query",
   "name": "AppQuery",
   "id": null,
-  "text": "query AppQuery {\n  popular_artists {\n    artists {\n      ...ArtistItem_artist\n      __id\n    }\n  }\n}\n\nfragment ArtistItem_artist on Artist {\n  id\n  href\n  bio\n  image {\n    url\n  }\n  __id\n}\n",
+  "text": "query AppQuery {\n  popular_artists {\n    ...PopularArtists_popular_artists\n  }\n}\n\nfragment PopularArtists_popular_artists on PopularArtists {\n  artists {\n    ...ArtistItem_artist\n    __id\n  }\n}\n\nfragment ArtistItem_artist on Artist {\n  id\n  href\n  bio\n  image {\n    url\n  }\n  __id\n}\n",
   "metadata": {},
   "fragment": {
     "kind": "Fragment",
@@ -74,21 +68,9 @@ return {
         "plural": false,
         "selections": [
           {
-            "kind": "LinkedField",
-            "alias": null,
-            "name": "artists",
-            "storageKey": null,
-            "args": null,
-            "concreteType": "Artist",
-            "plural": true,
-            "selections": [
-              {
-                "kind": "FragmentSpread",
-                "name": "ArtistItem_artist",
-                "args": null
-              },
-              v0
-            ]
+            "kind": "FragmentSpread",
+            "name": "PopularArtists_popular_artists",
+            "args": null
           }
         ]
       }
@@ -156,7 +138,13 @@ return {
                   }
                 ]
               },
-              v0
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "__id",
+                "args": null,
+                "storageKey": null
+              }
             ]
           }
         ]
@@ -164,6 +152,5 @@ return {
     ]
   }
 };
-})();
-(node/*: any*/).hash = '84c1535481057e6b11285b8c1e68ae9c';
+(node/*: any*/).hash = '6032c96118acb90ca9f9d3a582f4cb3c';
 module.exports = node;
