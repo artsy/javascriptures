@@ -16,6 +16,10 @@
   vertical-align: top;
 }
 
+.artist-item a {
+  color: black;
+}
+
 .artist-item .image {
   display: inline-block;
   width: 100px;
