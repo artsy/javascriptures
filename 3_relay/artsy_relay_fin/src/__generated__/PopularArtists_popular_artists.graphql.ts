@@ -1,26 +1,14 @@
-/**
- * @flow
- */
+/* tslint:disable */
 
-/* eslint-disable */
-
-'use strict';
-
-/*::
-import type { ConcreteFragment } from 'relay-runtime';
-import type { ArtistItem_artist$ref } from './ArtistItem_artist.graphql';
-import type { FragmentReference } from 'relay-runtime';
-declare export opaque type PopularArtists_popular_artists$ref: FragmentReference;
-export type PopularArtists_popular_artists = {|
-  +artists: ?$ReadOnlyArray<?{|
-    +$fragmentRefs: ArtistItem_artist$ref,
-  |}>,
-  +$refType: PopularArtists_popular_artists$ref,
-|};
-*/
+import { ConcreteFragment } from "relay-runtime";
+export type PopularArtists_popular_artists = {
+    readonly artists: ReadonlyArray<({
+    }) | null> | null;
+};
 
 
-const node/*: ConcreteFragment*/ = {
+
+const node: ConcreteFragment = {
   "kind": "Fragment",
   "name": "PopularArtists_popular_artists",
   "type": "PopularArtists",
@@ -52,5 +40,5 @@ const node/*: ConcreteFragment*/ = {
     }
   ]
 };
-(node/*: any*/).hash = '9a31fd8ac8dd6ecddbec0772b7848517';
-module.exports = node;
+(node as any).hash = '9a31fd8ac8dd6ecddbec0772b7848517';
+export default node;

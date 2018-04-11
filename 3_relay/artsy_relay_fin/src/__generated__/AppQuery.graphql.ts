@@ -1,22 +1,13 @@
-/**
- * @flow
- * @relayHash c99b304601b3a04704101ece2286366a
- */
+/* tslint:disable */
 
-/* eslint-disable */
+import { ConcreteRequest } from "relay-runtime";
+export type AppQueryVariables = {
+};
+export type AppQueryResponse = {
+    readonly popular_artists: ({
+    }) | null;
+};
 
-'use strict';
-
-/*::
-import type { ConcreteRequest } from 'relay-runtime';
-import type { PopularArtists_popular_artists$ref } from './PopularArtists_popular_artists.graphql';
-export type AppQueryVariables = {| |};
-export type AppQueryResponse = {|
-  +popular_artists: ?{|
-    +$fragmentRefs: PopularArtists_popular_artists$ref,
-  |},
-|};
-*/
 
 
 /*
@@ -44,7 +35,7 @@ fragment ArtistItem_artist on Artist {
 }
 */
 
-const node/*: ConcreteRequest*/ = {
+const node: ConcreteRequest = {
   "kind": "Request",
   "operationKind": "query",
   "name": "AppQuery",
@@ -152,5 +143,5 @@ const node/*: ConcreteRequest*/ = {
     ]
   }
 };
-(node/*: any*/).hash = '6032c96118acb90ca9f9d3a582f4cb3c';
-module.exports = node;
+(node as any).hash = '6032c96118acb90ca9f9d3a582f4cb3c';
+export default node;
