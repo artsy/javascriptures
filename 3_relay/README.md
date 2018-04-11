@@ -1,42 +1,49 @@
-This project uses Create React App to use Relay with the Artsy API.
+This project uses Relay with the Artsy API.
 
-### Start
+## Setup
 
-`artsy_relay_start` is the baseline setup. I started with a create-react-app project.
+* `$ npm install -g yarn`
+* `$ cd artsy_relay_start`
+* `$ yarn install`
 
-From there I:
+## Tutorial
 
-* `yarn eject`'d
-* Added our relay dependencies. We have a pretty unique setup, so that's a bunch of custom packages.
-* Added patch-package to support our unique graphql setup (`__id`)
-* Added prettier
-* Took the schema from metaphyics and added it to the [data](data) folder
-* Added some Relay configuration files inside [src/relay](src/relay)
-
-That's our baseline to start.
-
-### Tutorial
+`artsy_relay_start` is the baseline setup, `artsy_relay_fin` contains a finished version.
 
 Our aim is to take what was previously a downloaded JSON file and turn that into real code. We'll need to do a few
 things.
 
-* Create a Relay Query Renderer
-* Add the query:
+* Add a query fragment to `ArtistItem.tsx`
 
-  ```graphql
-  {
-    popular_artists {
-      artists {
-        id
-        href
-        image {
-          url
-        }
-        name
-        bio
+    ```graphql
+    fragment ArtistItem_artist on Artist {
+      id
+      href
+      bio
+      name
+      image {
+        url
       }
     }
-  }
-  ```
+    ```
 
-* Convert the `ArtistItem` into a fragment
+* Add a query fragment to `PopularArtists.tsx`
+
+    ```graphql
+    fragment PopularArtists_popular_artists on PopularArtists {
+      artists {
+        id
+        ...ArtistItem_artist
+      }
+    }
+    ```
+
+* Add a Relay Query Renderer to `App.tsx`
+
+    ```graphql
+    query AppQuery {
+      popular_artists {
+        ...PopularArtists_popular_artists
+      }
+    }
+    ```
