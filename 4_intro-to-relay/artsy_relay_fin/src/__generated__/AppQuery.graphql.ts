@@ -1,22 +1,13 @@
-/**
- * @flow
- * @relayHash c99b304601b3a04704101ece2286366a
- */
+/* tslint:disable */
 
-/* eslint-disable */
+import { ConcreteRequest } from "relay-runtime";
+export type AppQueryVariables = {
+};
+export type AppQueryResponse = {
+    readonly popular_artists: ({
+    }) | null;
+};
 
-'use strict';
-
-/*::
-import type { ConcreteRequest } from 'relay-runtime';
-import type { PopularArtists_popular_artists$ref } from './PopularArtists_popular_artists.graphql';
-export type AppQueryVariables = {| |};
-export type AppQueryResponse = {|
-  +popular_artists: ?{|
-    +$fragmentRefs: PopularArtists_popular_artists$ref,
-  |},
-|};
-*/
 
 
 /*
@@ -28,6 +19,7 @@ query AppQuery {
 
 fragment PopularArtists_popular_artists on PopularArtists {
   artists {
+    id
     ...ArtistItem_artist
     __id
   }
@@ -37,6 +29,7 @@ fragment ArtistItem_artist on Artist {
   id
   href
   bio
+  name
   image {
     url
   }
@@ -44,12 +37,12 @@ fragment ArtistItem_artist on Artist {
 }
 */
 
-const node/*: ConcreteRequest*/ = {
+const node: ConcreteRequest = {
   "kind": "Request",
   "operationKind": "query",
   "name": "AppQuery",
   "id": null,
-  "text": "query AppQuery {\n  popular_artists {\n    ...PopularArtists_popular_artists\n  }\n}\n\nfragment PopularArtists_popular_artists on PopularArtists {\n  artists {\n    ...ArtistItem_artist\n    __id\n  }\n}\n\nfragment ArtistItem_artist on Artist {\n  id\n  href\n  bio\n  image {\n    url\n  }\n  __id\n}\n",
+  "text": "query AppQuery {\n  popular_artists {\n    ...PopularArtists_popular_artists\n  }\n}\n\nfragment PopularArtists_popular_artists on PopularArtists {\n  artists {\n    id\n    ...ArtistItem_artist\n    __id\n  }\n}\n\nfragment ArtistItem_artist on Artist {\n  id\n  href\n  bio\n  name\n  image {\n    url\n  }\n  __id\n}\n",
   "metadata": {},
   "fragment": {
     "kind": "Fragment",
@@ -121,6 +114,13 @@ const node/*: ConcreteRequest*/ = {
                 "storageKey": null
               },
               {
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "name",
+                "args": null,
+                "storageKey": null
+              },
+              {
                 "kind": "LinkedField",
                 "alias": null,
                 "name": "image",
@@ -152,5 +152,5 @@ const node/*: ConcreteRequest*/ = {
     ]
   }
 };
-(node/*: any*/).hash = '6032c96118acb90ca9f9d3a582f4cb3c';
-module.exports = node;
+(node as any).hash = '6032c96118acb90ca9f9d3a582f4cb3c';
+export default node;

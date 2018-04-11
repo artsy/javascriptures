@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import { createFragmentContainer, graphql } from "react-relay"
 import styled from "styled-components"
 
 const fonts = {
@@ -22,7 +21,7 @@ const ImageDiv = styled.div`
   width: 100px;
   height: 100px;
   overflow: hidden;
-  background-image: url(${p => p.imageUrl});
+  background-image: url(${(p: { imageUrl: string }) => p.imageUrl});
   background-position: center;
   background-size: cover;
   margin-right: 10px;
@@ -55,7 +54,18 @@ const Bio = styled.div`
   font-size: 15px;
 `
 
-class ArtistItem extends Component {
+export interface ArtistItemData {
+  name: string
+  href: string
+  image: { url: string }
+  bio: string
+}
+
+interface Props {
+  artist: ArtistItemData
+}
+
+class ArtistItem extends Component<Props> {
   render() {
     const { name, href, image, bio } = this.props.artist
 
@@ -73,16 +83,4 @@ class ArtistItem extends Component {
   }
 }
 
-export default createFragmentContainer(
-  ArtistItem,
-  graphql`
-    fragment ArtistItem_artist on Artist {
-      id
-      href
-      bio
-      image {
-        url
-      }
-    }
-  `
-)
+export default ArtistItem

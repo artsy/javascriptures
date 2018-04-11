@@ -1,28 +1,19 @@
-/**
- * @flow
- */
+/* tslint:disable */
 
-/* eslint-disable */
-
-'use strict';
-
-/*::
-import type { ConcreteFragment } from 'relay-runtime';
-import type { FragmentReference } from 'relay-runtime';
-declare export opaque type ArtistItem_artist$ref: FragmentReference;
-export type ArtistItem_artist = {|
-  +id: string,
-  +href: ?string,
-  +bio: ?string,
-  +image: ?{|
-    +url: ?string,
-  |},
-  +$refType: ArtistItem_artist$ref,
-|};
-*/
+import { ConcreteFragment } from "relay-runtime";
+export type ArtistItem_artist = {
+    readonly id: string;
+    readonly href: string | null;
+    readonly bio: string | null;
+    readonly name: string | null;
+    readonly image: ({
+        readonly url: string | null;
+    }) | null;
+};
 
 
-const node/*: ConcreteFragment*/ = {
+
+const node: ConcreteFragment = {
   "kind": "Fragment",
   "name": "ArtistItem_artist",
   "type": "Artist",
@@ -47,6 +38,13 @@ const node/*: ConcreteFragment*/ = {
       "kind": "ScalarField",
       "alias": null,
       "name": "bio",
+      "args": null,
+      "storageKey": null
+    },
+    {
+      "kind": "ScalarField",
+      "alias": null,
+      "name": "name",
       "args": null,
       "storageKey": null
     },
@@ -77,5 +75,5 @@ const node/*: ConcreteFragment*/ = {
     }
   ]
 };
-(node/*: any*/).hash = '1b0d00821c9132400774c9b79ab2c194';
-module.exports = node;
+(node as any).hash = 'c87393f474c6e8d3b0eb316d5d04b8d1';
+export default node;

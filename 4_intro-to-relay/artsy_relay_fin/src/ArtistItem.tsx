@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { createFragmentContainer, graphql } from "react-relay"
 import styled from "styled-components"
 
 const fonts = {
@@ -21,7 +22,7 @@ const ImageDiv = styled.div`
   width: 100px;
   height: 100px;
   overflow: hidden;
-  background-image: url(${p => p.imageUrl});
+  background-image: url(${(p: { imageUrl: string }) => p.imageUrl});
   background-position: center;
   background-size: cover;
   margin-right: 10px;
@@ -54,14 +55,21 @@ const Bio = styled.div`
   font-size: 15px;
 `
 
-class ArtistItem extends Component {
+import { ArtistItem_artist } from "./__generated__/ArtistItem_artist.graphql"
+
+interface Props {
+  artist: ArtistItem_artist
+}
+
+class ArtistItem extends Component<Props> {
   render() {
     const { name, href, image, bio } = this.props.artist
+    const imageUrl = (image && image.url) || "http://itsnotpossible.typepad.com/trashfan/astley1.jpg"
 
     return (
       <Wrapper>
-        <Link href={href}>
-          <ImageDiv imageUrl={image.url} />
+        <Link href={href || "https://www.youtube.com/watch?v=dQw4w9WgXcQ"}>
+          <ImageDiv imageUrl={imageUrl} />
           <Meta>
             <Name>{name}</Name>
             <Bio>{bio}</Bio>
@@ -72,4 +80,17 @@ class ArtistItem extends Component {
   }
 }
 
-export default ArtistItem
+export default createFragmentContainer(
+  ArtistItem,
+  graphql`
+    fragment ArtistItem_artist on Artist {
+      id
+      href
+      bio
+      name
+      image {
+        url
+      }
+    }
+  `
+)
