@@ -8,7 +8,7 @@ class PopularArtists extends Component {
       <div>
         <h3>Popular Artists</h3>
         <div className="artist-list">
-          {this.props.popular_artists.artists.map(a => <ArtistItem artist={a} /> )}
+          {this.props.popular_artists.artists.map(a => <ArtistItem key={a.id} artist={a} /> )}
         </div>
       </div>
     )

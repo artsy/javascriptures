@@ -10,18 +10,6 @@
   border: 1px solid black;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
 .artist-item {
   padding: 10px;
   border-bottom: 1px solid;
