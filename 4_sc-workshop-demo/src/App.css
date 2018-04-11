@@ -1,0 +1,53 @@
+@import url("https://webfonts.artsy.net/all-webfonts.css");
+
+.App {
+  max-width: 500px;
+  margin: 0 auto;
+  border: 1px solid black;
+  font-family: "Adobe Garamond W08", sans-serif;
+}
+
+.artist-item {
+  padding: 10px;
+  border-bottom: 1px solid;
+  vertical-align: top;
+}
+
+.artist-item .image {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  margin-right: 10px;
+}
+
+.artist-item .meta {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.artist-item .meta h3 {
+  display: block;
+  font-size: 15px;
+  line-height: 1.33;
+  font-family: "ITC Avant Garde Gothic W04", "AvantGardeGothicITCW01D 731075",
+    "AvantGardeGothicITCW01Dm", "Helvetica", "sans-serif";
+  -webkit-font-smoothing: antialiased;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  margin: 2px 0 5px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+.artist-item .meta div {
+  font-family: "Adobe Garamond W08", "adobe-garamond-pro",
+    "AGaramondPro-Regular", "Times New Roman", "Times", "serif";
+  font-size: 15px;
+}
