@@ -70,7 +70,8 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "prepare": "patch-package",
-    "relay": "relay-compiler --src ./src --schema data/schema.graphql --language typescript --artifactDirectory ./src/__generated__ --watch"
+    "relay": "relay-compiler --src ./src --schema data/schema.graphql --language typescript --artifactDirectory ./src/__generated__ --watch",
+    "type-check": "tsc --noEmit --pretty"
   },
   "jest": {
     "collectCoverageFrom": [

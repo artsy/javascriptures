@@ -4,13 +4,24 @@ import './PopularArtists.css';
 
 import ArtistItem from "./ArtistItem"
 
-class PopularArtists extends Component {
+import { PopularArtists_popular_artists } from "./__generated__/PopularArtists_popular_artists.graphql"
+
+interface Props {
+  popular_artists: PopularArtists_popular_artists
+}
+
+function notEmpty<T>(value: T | null | undefined): value is T {
+  return value !== null && value !== undefined;
+}
+
+class PopularArtists extends Component<Props> {
   render() {
+    const artists = (this.props.popular_artists.artists || []).filter(notEmpty)
     return (
       <div>
         <h3>Popular Artists</h3>
         <div className="artist-list">
-          {this.props.popular_artists.artists.map(a => <ArtistItem artist={a} /> )}
+          {artists.map(artist => <ArtistItem key={artist.id} artist={artist as any} /> )}
         </div>
       </div>
     )
@@ -22,6 +33,7 @@ export default createFragmentContainer(
   graphql`
     fragment PopularArtists_popular_artists on PopularArtists {
       artists {
+        id
         ...ArtistItem_artist
       }
     }

@@ -19,6 +19,7 @@ query AppQuery {
 
 fragment PopularArtists_popular_artists on PopularArtists {
   artists {
+    id
     ...ArtistItem_artist
     __id
   }
@@ -28,6 +29,7 @@ fragment ArtistItem_artist on Artist {
   id
   href
   bio
+  name
   image {
     url
   }
@@ -40,7 +42,7 @@ const node: ConcreteRequest = {
   "operationKind": "query",
   "name": "AppQuery",
   "id": null,
-  "text": "query AppQuery {\n  popular_artists {\n    ...PopularArtists_popular_artists\n  }\n}\n\nfragment PopularArtists_popular_artists on PopularArtists {\n  artists {\n    ...ArtistItem_artist\n    __id\n  }\n}\n\nfragment ArtistItem_artist on Artist {\n  id\n  href\n  bio\n  image {\n    url\n  }\n  __id\n}\n",
+  "text": "query AppQuery {\n  popular_artists {\n    ...PopularArtists_popular_artists\n  }\n}\n\nfragment PopularArtists_popular_artists on PopularArtists {\n  artists {\n    id\n    ...ArtistItem_artist\n    __id\n  }\n}\n\nfragment ArtistItem_artist on Artist {\n  id\n  href\n  bio\n  name\n  image {\n    url\n  }\n  __id\n}\n",
   "metadata": {},
   "fragment": {
     "kind": "Fragment",
@@ -108,6 +110,13 @@ const node: ConcreteRequest = {
                 "kind": "ScalarField",
                 "alias": null,
                 "name": "bio",
+                "args": null,
+                "storageKey": null
+              },
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "name",
                 "args": null,
                 "storageKey": null
               },

@@ -3,6 +3,7 @@
 import { ConcreteFragment } from "relay-runtime";
 export type PopularArtists_popular_artists = {
     readonly artists: ReadonlyArray<({
+        readonly id: string;
     }) | null> | null;
 };
 
@@ -25,6 +26,13 @@ const node: ConcreteFragment = {
       "plural": true,
       "selections": [
         {
+          "kind": "ScalarField",
+          "alias": null,
+          "name": "id",
+          "args": null,
+          "storageKey": null
+        },
+        {
           "kind": "FragmentSpread",
           "name": "ArtistItem_artist",
           "args": null
@@ -40,5 +48,5 @@ const node: ConcreteFragment = {
     }
   ]
 };
-(node as any).hash = '9a31fd8ac8dd6ecddbec0772b7848517';
+(node as any).hash = '374b6922fb6ea685d8a661847b35115d';
 export default node;

@@ -55,13 +55,19 @@ const Bio = styled.div`
   font-size: 15px;
 `
 
-class ArtistItem extends Component {
+import { ArtistItem_artist } from "./__generated__/ArtistItem_artist.graphql"
+
+interface Props {
+  artist: ArtistItem_artist
+}
+
+class ArtistItem extends Component<Props> {
   render() {
     const { name, href, image, bio } = this.props.artist
 
     return (
       <Wrapper>
-        <Link href={href}>
+        <Link href={href || "https://www.youtube.com/watch?v=dQw4w9WgXcQ"}>
           <ImageDiv imageUrl={image.url} />
           <Meta>
             <Name>{name}</Name>
@@ -80,6 +86,7 @@ export default createFragmentContainer(
       id
       href
       bio
+      name
       image {
         url
       }

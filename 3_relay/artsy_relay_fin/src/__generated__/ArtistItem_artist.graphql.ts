@@ -5,6 +5,7 @@ export type ArtistItem_artist = {
     readonly id: string;
     readonly href: string | null;
     readonly bio: string | null;
+    readonly name: string | null;
     readonly image: ({
         readonly url: string | null;
     }) | null;
@@ -41,6 +42,13 @@ const node: ConcreteFragment = {
       "storageKey": null
     },
     {
+      "kind": "ScalarField",
+      "alias": null,
+      "name": "name",
+      "args": null,
+      "storageKey": null
+    },
+    {
       "kind": "LinkedField",
       "alias": null,
       "name": "image",
@@ -67,5 +75,5 @@ const node: ConcreteFragment = {
     }
   ]
 };
-(node as any).hash = '1b0d00821c9132400774c9b79ab2c194';
+(node as any).hash = 'c87393f474c6e8d3b0eb316d5d04b8d1';
 export default node;

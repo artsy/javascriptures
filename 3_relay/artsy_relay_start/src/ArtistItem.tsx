@@ -54,7 +54,18 @@ const Bio = styled.div`
   font-size: 15px;
 `
 
-class ArtistItem extends Component {
+export interface ArtistItemData {
+  name: string
+  href: string
+  image: { url: string }
+  bio: string
+}
+
+interface Props {
+  artist: ArtistItemData
+}
+
+class ArtistItem extends Component<Props> {
   render() {
     const { name, href, image, bio } = this.props.artist
 
