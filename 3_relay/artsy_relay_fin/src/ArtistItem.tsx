@@ -22,7 +22,7 @@ const ImageDiv = styled.div`
   width: 100px;
   height: 100px;
   overflow: hidden;
-  background-image: url(${p => p.imageUrl});
+  background-image: url(${(p: { imageUrl: string }) => p.imageUrl});
   background-position: center;
   background-size: cover;
   margin-right: 10px;
@@ -64,11 +64,12 @@ interface Props {
 class ArtistItem extends Component<Props> {
   render() {
     const { name, href, image, bio } = this.props.artist
+    const imageUrl = (image && image.url) || "http://itsnotpossible.typepad.com/trashfan/astley1.jpg"
 
     return (
       <Wrapper>
         <Link href={href || "https://www.youtube.com/watch?v=dQw4w9WgXcQ"}>
-          <ImageDiv imageUrl={image.url} />
+          <ImageDiv imageUrl={imageUrl} />
           <Meta>
             <Name>{name}</Name>
             <Bio>{bio}</Bio>

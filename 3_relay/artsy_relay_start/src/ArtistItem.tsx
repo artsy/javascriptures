@@ -21,7 +21,7 @@ const ImageDiv = styled.div`
   width: 100px;
   height: 100px;
   overflow: hidden;
-  background-image: url(${p => p.imageUrl});
+  background-image: url(${(p: { imageUrl: string }) => p.imageUrl});
   background-position: center;
   background-size: cover;
   margin-right: 10px;
