@@ -1,0 +1,15 @@
+{
+  "files.exclude": {
+    ".git/": true,
+    "node_modules/": false
+  },
+  "search.exclude": {
+    "**/node_modules": true
+  },
+  "editor.rulers": [80],
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "[json]": {
+    "editor.formatOnSave": false
+  }
+}
