@@ -3,11 +3,11 @@ import { DarkModeStatus } from './DarkModeStatus'
 import { connect } from 'react-redux'
 import * as actions from '../actions'
 
-const mapDispatchToProps = {
+const appActions = {
   toggleDarkModeAction: actions.toggleDarkMode
 }
 
-export const ToggleButton = connect(null, mapDispatchToProps)(props => {
+export const ToggleButton = connect(null, appActions)(props => {
   const { toggleDarkModeAction } = props
 
   return (
