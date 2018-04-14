@@ -16,7 +16,7 @@ export const FetchUsersButton = connect(state, appActions)(props => {
   return (
     <div className="toggle">
       <button className="toggleButton" onClick={fetchUsersAction}>
-        { isFetching ? 'Fetching...' : 'Fetch Users'}
+        { isFetching ? 'Fetching...' : 'Fetch Users' }
       </button>
     </div>
   )
