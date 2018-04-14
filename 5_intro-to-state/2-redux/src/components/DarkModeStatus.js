@@ -6,5 +6,5 @@ const state = ({ app }) => ({
 })
 
 export const DarkModeStatus = connect(state)(({ status }) => {
-  return <span> ({status})</span>
+  return <span>({status})</span>
 })
