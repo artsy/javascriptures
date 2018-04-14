@@ -11,7 +11,7 @@ export const FetchUsersButton = () => {
         return (
           <div className="toggle">
             <button className="toggleButton" onClick={() => app.fetchUsers()}>
-              { isFetching ? 'Fetching...' : 'Fetch Users'}
+              { isFetching ? 'Fetching...' : 'Fetch Users' }
             </button>
           </div>
         )
